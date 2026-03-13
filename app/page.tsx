@@ -1,29 +1,33 @@
 'use client'; // Necessário no Next.js App Router para animações no cliente
 
-import { motion, HTMLMotionProps } from 'framer-motion';
+import { motion, HTMLMotionProps, Variants } from 'framer-motion';
 import { Github, Linkedin, Mail, MessageCircle } from 'lucide-react'; // Instale com: npm install lucide-react
 
 // Configuração padrão para animação de "aparecer" (fade-in + slide-up)
-const fadeInUp = {
+const fadeInUp: Variants = {
   initial: { opacity: 0, y: 30 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, amount: 0.3 }, // Anima apenas uma vez, quando 30% do elemento aparecer
-  transition: { duration: 0.6, ease: [0, 0, 0.2, 1] },
+};;
+
+const sectionTransition = { 
+  duration: 0.6, 
+  ease: [0, 0, 0.2, 1] 
 };
 
-
-interface AnimatedSectionProps extends HTMLMotionProps<"section">{
+interface AnimatedSectionProps extends HTMLMotionProps<"section"> {
   children: React.ReactNode;
-  className?: string;
-  id?: string; 
 }
 
-// Componente para uma Seção Animada
-const AnimatedSection = ({ children, className = '', id }: AnimatedSectionProps) => (
+const AnimatedSection = ({ children, className = '', id, ...props }: AnimatedSectionProps) => (
   <motion.section
-    id={id} 
-    {...fadeInUp}
+    id={id}
+    initial="initial"
+    whileInView="whileInView"
+    viewport={{ once: true, amount: 0.3 }}
+    variants={fadeInUp}
+    transition={sectionTransition} // Passamos a transição aqui
     className={`py-20 px-6 md:px-10 ${className}`}
+    {...props}
   >
     {children}
   </motion.section>
