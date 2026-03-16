@@ -24,3 +24,83 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+/* Estilos básicos para o Burger Menu funcionar */
+.bm-burger-button {
+  position: fixed;
+  width: 30px;
+  height: 25px;
+  right: 25px;
+  top: 20px;
+  z-index: 100 !important; /* Garante que fique acima da Navbar */
+}
+
+/* Cor das barrinhas do hambúrguer */
+.bm-burger-bars {
+  background: #2563eb; /* Azul correspondente ao seu tema */
+  border-radius: 2px;
+}
+
+/* Cor das barrinhas ao passar o mouse */
+.bm-burger-bars-hover {
+  background: #3b82f6;
+}
+
+/* Botão de fechar (X) */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+.bm-cross {
+  background: #bdc3c7;
+}
+
+/* O Menu em si */
+.bm-menu-wrap {
+  position: fixed;
+  height: 100%;
+}
+
+.bm-menu {
+  background: #18181b; /* Cor zinc-900 para combinar com o dark mode */
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
+
+/* Estilo dos itens da lista */
+.bm-item-list {
+  color: #b8b7ad;
+  padding: 0.8em;
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* Estilo do SVG 'Morph' (O efeito elástico) */
+.bm-morph-shape {
+  fill: #18181b; /* Deve ser a mesma cor do .bm-menu */
+}
+
+/* Overlay (Fundo escurecido) */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+}
+/* Força a div interna a ser flex-column e ocupar largura total */
+.bm-item-list div {
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  align-items: flex-start; /* Alinha os itens à esquerda */
+}
+
+/* Garante que tanto <a> quanto o <Link> (que vira <a>) ocupem a linha toda */
+.menu-item {
+  display: block !important;
+  width: 100% !important;
+  text-align: left;
+  text-decoration: none;
+}
+
+/* Ajuste opcional para remover o outline azul chato */
+.bm-item-list *:focus {
+  outline: none;
+}
