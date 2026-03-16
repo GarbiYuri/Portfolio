@@ -29,11 +29,9 @@ const AnimatedSection = ({ children, className = '', id, ...props }: AnimatedSec
   </motion.section>
 );
 
-export default function Home() {
+export default function ArduinoPage() {
   const projetos = [
-    { title: 'Blog BackendJava', desc: 'Criação de api para Blog Estilo Rede Social.', tech: ['Java', 'SpringBoot', 'Docker', 'PostgreSQL', 'JWT'] },
-    { title: 'Seu Doce Pedido', desc: 'Site Moderno para Venda de Doces. TCC de Curso técnico.', tech: ['Laravel', 'PHP','React', 'Tailwind', 'Javascript'] },
-    { title: 'Escape Room', desc: 'Projeto de Jogo de Sala de Escape durante Curso Técnico.', tech: ['Javascript', 'PHP', 'SQL'] },
+    { title: 'Arduino Rele Com Lampada', desc: 'Criação de Sistema Embarcado Com MicroControlador ESP32', tech: ['C++', 'Wifi.h', 'Relé', 'WebServer'], link:"/arduino/ProjetoReleComLampada.zip" },
   ];
 
   return (
@@ -47,8 +45,8 @@ export default function Home() {
             <a href="#sobre" className="hover:text-blue-600 transition">Sobre</a>
             <a href="#projetos" className="hover:text-blue-600 transition">Projetos</a>
             <a href="#contato" className="hover:text-blue-600 transition">Contato</a>
-            <Link href="/arduino" className="hover:text-blue-600 transition">
-    Arduino</Link>
+            <Link href="/" className="hover:text-blue-600 transition">
+            Home</Link>
           </div>
         </div>
       </nav>
@@ -57,35 +55,21 @@ export default function Home() {
         
         {/* --- SEÇÃO SOBRE --- */}
         <AnimatedSection id="sobre" className="flex flex-col items-center text-center">
-          <motion.div
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ type: 'spring', stiffness: 260, damping: 20, delay: 0.2 }}
-            className="mb-6 h-32 w-32 rounded-full bg-zinc-200 ring-2 ring-blue-600 dark:bg-zinc-800 overflow-hidden"
-          >
-           <img src='/eu.jpeg' className="w-full h-full object-cover" alt="Foto de Francisco"/>
-          </motion.div>
+  
+         
           <h1 className="text-5xl md:text-6xl font-extrabold tracking-tighter mb-4">
-            Olá, eu sou o <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">Francisco</span>
+            Página Arduino
           </h1>
           <p className="text-xl text-zinc-600 dark:text-zinc-400 max-w-2xl mb-8">
-            Estudante de ADS. Apaixonado por transformar lógica em experiências digitais incríveis, do backend ao frontend.
+            Página dedicada aos projetos de Arduino e compartilhar os Arquivos.
           </p>
-          <div className="flex gap-4">
-            <a href="#projetos" className="px-6 py-3 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 transition shadow-lg shadow-blue-500/20">
-              Ver Projetos
-            </a>
-            <a href="https://wa.me/5519996206053" target="_blank" className="px-6 py-3 bg-zinc-200 dark:bg-zinc-800 rounded-full font-semibold hover:bg-zinc-300 dark:hover:bg-zinc-700 transition">
-              WhatsApp
-            </a>
-          </div>
+        
         </AnimatedSection>
 
         {/* --- SEÇÃO PROJETOS --- */}
         <AnimatedSection id="projetos" className="bg-zinc-100/50 dark:bg-zinc-900/50 rounded-3xl my-10">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold tracking-tight mb-2">Projetos em Destaque</h2>
-            <p className="text-zinc-600 dark:text-zinc-400">O que ando desenvolvendo na FATEC.</p>
+            <h2 className="text-4xl font-bold tracking-tight mb-2">Projetos</h2>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -108,6 +92,13 @@ export default function Home() {
                     </span>
                   ))}
                 </div>
+                <a 
+                href={proj.link} 
+                download 
+                className="mt-6 inline-block px-6 py-3 bg-blue-600 text-white rounded-full"
+                >
+                  Download .ZIP
+                </a>
               </motion.div>
             ))}
           </div>
