@@ -31,7 +31,7 @@ const AnimatedSection = ({ children, className = '', id, ...props }: AnimatedSec
 
 export default function ArduinoPage() {
   const projetos = [
-    { title: 'Arduino Rele Com Lampada', desc: 'Criação de Sistema Embarcado Com MicroControlador ESP32', tech: ['C++', 'Wifi.h', 'Relé', 'WebServer'], link:"/arduino/ProjetoReleComLampada.zip" },
+    { title: 'Arduino Rele Com Lampada', desc: 'Criação de Sistema Embarcado Com MicroControlador ESP32', tech: ['C++', 'Wifi.h', 'Relé', 'WebServer'], link:"/files/ProjetoReleComLampada.zip" },
   ];
 
   return (
