@@ -31,12 +31,12 @@ body {
   height: 25px;
   right: 25px;
   top: 20px;
-  z-index: 100 !important; /* Garante que fique acima da Navbar */
+  z-index: 100 !important; 
 }
 
 /* Cor das barrinhas do hambúrguer */
 .bm-burger-bars {
-  background: #2563eb; /* Azul correspondente ao seu tema */
+  background: #2563eb; 
   border-radius: 2px;
 }
 
@@ -61,7 +61,7 @@ body {
 }
 
 .bm-menu {
-  background: #18181b; /* Cor zinc-900 para combinar com o dark mode */
+  background: #18181b;
   padding: 2.5em 1.5em 0;
   font-size: 1.15em;
 }
@@ -77,7 +77,7 @@ body {
 
 /* Estilo do SVG 'Morph' (O efeito elástico) */
 .bm-morph-shape {
-  fill: #18181b; /* Deve ser a mesma cor do .bm-menu */
+  fill: #18181b; 
 }
 
 /* Overlay (Fundo escurecido) */
@@ -89,7 +89,7 @@ body {
   display: flex !important;
   flex-direction: column !important;
   width: 100% !important;
-  align-items: flex-start; /* Alinha os itens à esquerda */
+  align-items: flex-start; 
 }
 
 /* Garante que tanto <a> quanto o <Link> (que vira <a>) ocupem a linha toda */
